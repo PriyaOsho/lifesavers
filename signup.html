@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>SIGNUP</title>
+    </head>
+
+    <body>
+        <form action="signup.php" method="post">
+            <h2>SIGNUP</h2>
+            
+            <?php if (isset($_GET['error'])) { ?>
+                <p class="error"><?php echo $_GET['error'];?></p>
+
+            <?php } ?>
+
+             <label>User Name</label>
+             <input type="text" name="username" placeholder="User Name"><br>
+
+             <label>Password</label>
+             <input type="password" name="password" placeholder="Password"><br>
+
+             <label>Confirm Password</label>
+             <input type="password" name="confirm_password" placeholder="Confirm Password"><br>
+
+             <button type="submit">Sign Up</button>
+        </form>
+    </body>
+</html>
+
+<?php 
+session_start();
+
+require_once "db_conn.php";
+
+if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm_password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+
+    if (empty($username)) {
+        header("Location: signup.php?error=Please enter a username");
+        exit();
+    }
+    else if (empty($password)) {
+        header("Location: signup.php?error=Please enter a password");
+        exit();
+    }
+    else if ($password !== $confirm_password) {
+        header("Location: signup.php?error=Passwords do not match");
+        exit();
+    }
+    else {
+        // Escape special characters in the username and password to prevent SQL injection attacks
+        $username = mysqli_real_escape_string($conn, $username);
+        $password = mysqli_real_escape_string($conn, $password);
+
+        // Hash the password for security
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        // Check if the user already exists in the database
+        $sql = "SELECT * FROM login_users WHERE user_name='$username'";
+
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            header("Location: signup.php?error=User already exists");
+            exit();
+        }
+
+        // Insert the new user into the database
+        $sql = "INSERT INTO login_users (user_name, password) VALUES ('$username', '$hashed_password')";
+
+        if (mysqli_query($conn, $sql)) {
+            header("Location: login.php?success=You have successfully signed up!");
+            exit();
+        }
+        else {
+            header("Location: signup.php?error=Error inserting user into database");
+            exit();
+        }
+    }
+}
+
+mysqli_close($conn);
+?>

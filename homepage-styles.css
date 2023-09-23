@@ -1,0 +1,57 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+body {
+    margin: 0;
+    background-color: #20243e;
+}
+
+.nav {
+    background-color: #20243e;
+    overflow: hidden;
+    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.3);
+}
+
+.nav a {
+    float: left;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    font-size: 1.8em;
+    color: white;
+}
+
+.nav a.split {
+    float: right;
+    padding: 0.25em 0.5em;
+    margin: 0.25em 0.5em;
+    background-color: #17192b;
+    border-radius: 0.5em;
+}
+
+.main-buttons {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.main-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25em 1.25em;
+    margin: 0.25em 0.1em;
+    text-decoration: none;
+    text-align: center;
+    font-size: 4.5vw;
+    font-weight: 700;
+    color: black;
+    background-color: #a2a9e9;
+    border-radius: 0.25em;
+    max-width: 24vw;
+    height: 9vw;
+}

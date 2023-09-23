@@ -1,0 +1,50 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+body {
+    margin: 0;
+    background-color: #20243e;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+caption { 
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+}
+
+.navbar {
+    background-color: #20243e;
+    overflow: hidden;
+    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    font-size: 1.8em;
+    color: white;
+}
+
+.navbar a.btn {
+    float: right;
+    padding: 0.25em 0.5em;
+    margin: 0.25em 0.5em;
+}
+
+.navbar a.logout {
+    float: right;
+    padding: 0.25em 0.5em;
+    margin: 0.25em 0.5em;
+    background-color: #17192b;
+    border-radius: 0.5em;
+}
+

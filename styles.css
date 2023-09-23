@@ -1,0 +1,76 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+#chart-container {
+    width: 50%;
+    height: auto;
+}
+
+body {
+    margin: 0;
+    background-color: #20243e;
+}
+
+
+.date-select {
+    float: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    padding: 200;
+    background-color: #20243e;
+    overflow: hidden;
+    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.3);
+    border: 12px solid #000;
+}
+
+.date-select form {
+    float: center;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    font-size: 1.8em;
+    color: white;
+}
+
+.date-select p {
+    float: center;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    font-size: 1.8em;
+    color: white;
+}
+
+.navbar {
+    background-color: #20243e;
+    overflow: hidden;
+    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    font-size: 1.8em;
+    color: white;
+}
+
+.navbar a.btn {
+    float: right;
+    padding: 0.25em 0.5em;
+    margin: 0.25em 0.5em;
+}
+
+.navbar a.logout {
+    float: right;
+    padding: 0.25em 0.5em;
+    margin: 0.25em 0.5em;
+    background-color: #17192b;
+    border-radius: 0.5em;
+}
+

@@ -1,0 +1,28 @@
+<?php
+$servername = "oceanus.cse.buffalo.edu";
+$username = "oshopriy";
+$password = "50363378";
+$dbname = "cse442_2023_spring_team_r_db";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// Prepare and bind statement
+$stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+$stmt->bind_param("ss", $new_username, $new_password);
+
+// Set parameters and execute statement
+$new_username = $_POST['username']; // assume form input for username
+$new_password = $_POST['password']; // assume form input for password
+$stmt->execute();
+
+echo "New records created successfully";
+
+$stmt->close();
+$conn->close();
+?>

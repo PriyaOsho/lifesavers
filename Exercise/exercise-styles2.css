@@ -1,0 +1,102 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+.navbar {
+    background-color: #20243e;
+    overflow: hidden;
+    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    font-size: 1.8em;
+    color: white;
+}
+
+.navbar a.btn {
+    float: right;
+    padding: 0.25em 0.5em;
+    margin: 0.25em 0.5em;
+}
+
+.navbar a.logout {
+    float: right;
+    padding: 0.25em 0.5em;
+    margin: 0.25em 0.5em;
+    background-color: #17192b;
+    border-radius: 0.5em;
+}
+
+body {
+    background-color: #20243e;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+form {
+    background-color: #86739f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #000000;
+    width: 500px;
+    margin: 0 auto;
+}
+
+select {
+    background-color: #a197af;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px #000000;
+    width: 75px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+input {
+    background-color: #a197af;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px #000000;
+    width: 100%;
+}
+
+input[type=submit] {
+    background-color: #17192b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+input[type=submit]:hover {
+    background-color: #0b0c17;
+}
+
+.alert1 {
+    padding: 20px;
+    background-color: #da87c4;
+    color: white;
+  }
+  
+.alert2 {
+    padding: 20px;
+    background-color: #ff0000;
+    color: white;
+  }
+  
